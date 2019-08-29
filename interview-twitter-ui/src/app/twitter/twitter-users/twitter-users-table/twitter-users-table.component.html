@@ -1,0 +1,19 @@
+ <table class="table" id="tweets-table">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Author</th>
+        <th>Full Name</th>
+        <th *ngIf="allUsers">Follow</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of data">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.fullName}}</td>
+        <td *ngIf="allUsers"><button class="{{user.following ? 'btn':'btn btn-primary'}}" (click)="followAction(user)">{{!user.following ? 'Follow':'Unfollow'}}</button></td>
+      </tr>
+      </tbody>
+    </table>
+

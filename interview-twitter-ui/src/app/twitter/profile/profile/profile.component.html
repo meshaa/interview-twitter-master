@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div *ngIf="$profile | async; let $profile; else loading">
+    <h1>User Profile : {{$profile.username}}</h1>
+    <ul class="list-group">
+      <li class="list-group-item">User ID : {{$profile.id}}</li>
+      <li class="list-group-item">Full Name : {{$profile.fullName}}</li>
+      <li class="list-group-item">Number of Followers : {{$profile.numberOfFollowers}}</li>
+      <li class="list-group-item">Number of Tweets : {{$profile.numberOfTweets}}</li>
+      <li class="list-group-item">Number Of Users Following : {{$profile.numberOfFollowing}}</li>
+    </ul>
+  </div>
+  <ng-template #loading>Loading Data...</ng-template>
+
+</div>
+

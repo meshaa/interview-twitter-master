@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-4">
+    <h1>All Users</h1>
+    <app-twitter-users-table #allTitterUsers (follow)="addFollower($event)" (unfollow)="removeFollower($event)" [allUsers]="true"  [data]="allUsers | async"  ></app-twitter-users-table>
+  </div>
+  <div class="col-sm-4">
+    <h1>Following</h1>
+    <app-twitter-users-table #followingTwitterUsers [data]="followingData | async"  ></app-twitter-users-table>
+  </div>
+  <div class="col-sm-4">
+    <h1>Followers</h1>
+    <app-twitter-users-table [data]="followersData | async"  ></app-twitter-users-table>
+  </div>
+</div>
+
